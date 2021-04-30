@@ -1,0 +1,24 @@
+x1 = l1*sin(t1);
+y1 = l1*cos(t1);
+x2 = l1*sin(t1)+l2*sin(t2);
+y2 = l1*cos(t1)+l2*cos(t2);
+
+x1d = l1*cos(t1)*t1d;
+t1d = -l1*sin(t1)*t1d;
+x2d = l1*cos(t1)*t1d+l2*cos(t2)*t2d;
+t2d = -l1*sin(t1)*t1d-l2*sin(t2)*t2d;
+
+x1dd = -l1*sin(t1)*t1d^2+l1*cos(t1)*t1dd;
+y1dd = -l1*cos(t1)*t1d^2-l1*sin(t1)*t1dd;
+x1dd = -l1*sin(t1)*t1d^2+l1*cos(t1)*t1dd-l2*sin(t2)*t2d^2+l2*cos(t2)*t2dd;
+y1dd = -l1*cos(t1)*t1d^2-l1*sin(t1)*t1dd-l2*cos(t2)*t2d^2-l2*sin(t2)*t2dd;
+
+
+cummed (m1*x1dd+m2*x2dd-g*(m1+m2))*(y1) = (m1*y1dd+m2*y2dd)*(x1);
+cummed (m2*x2dd-m2g)*(y2-y1) = (m2*y2dd)*(x2-x1);
+//cummed indicates the target
+
+//coagulate t1dd;
+//coagulate t2dd;
+
+
